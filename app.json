@@ -1,0 +1,23 @@
+{
+  "id": "3a09e3aa-27e0-4a28-9fc4-ab09ac2c5e53",
+  "name": "ALProject2",
+  "publisher": "Miguel Peixoto",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.1",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": "11.0.0.0",
+  "idRange": {
+    "from": 50100,
+    "to": 50149
+  },
+  "features": ["TranslationFile"]
+}
