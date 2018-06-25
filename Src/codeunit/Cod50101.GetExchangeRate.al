@@ -14,7 +14,6 @@ codeunit 50101  "GetExchangeRate"
         if HttpClient.get(Url,HttpResponse) then begin
             HttpResponse.Content().ReadAs(ResponseText);
             JSONResult.ReadFrom(ResponseText);
-            //Message(ResponseText);
             //Message(JSONMethods.GetJsonValueAsText(JSONResult,'base'));
             Message(JSONMethods.SelectJsonValueAsText(JSONResult,StrSubstNo('$.rates.%1',Currency)));
         end;
@@ -28,6 +27,7 @@ codeunit 50101  "GetExchangeRate"
         ResponseText: text;
         JSONMethods: codeunit JSONMethods;
         JSONResult: JsonObject;
+        ResultText: Text;
         ResultDecimal: Decimal;
     begin
         
@@ -35,7 +35,8 @@ codeunit 50101  "GetExchangeRate"
         if HttpClient.get(Url,HttpResponse) then begin
             HttpResponse.Content().ReadAs(ResponseText);
             JSONResult.ReadFrom(ResponseText);
-            Evaluate(ResultDecimal,JSONMethods.SelectJsonValueAsText(JSONResult,StrSubstNo('$.rates.%1',Currency)));
+            ResultText := JSONMethods.SelectJsonValueAsText(JSONResult,StrSubstNo('$.rates.%1',Currency));
+            Evaluate(ResultDecimal,ResultText,9);
             Exit(ResultDecimal);
         end;
     end;

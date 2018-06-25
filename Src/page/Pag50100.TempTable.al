@@ -32,6 +32,7 @@ page 50100 "TempTable"
                 {
                     Editable = false;
                     ApplicationArea = ALL;
+                    DecimalPlaces = 4;
                 }
             }
         }
