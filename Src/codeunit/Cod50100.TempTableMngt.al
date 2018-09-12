@@ -8,6 +8,7 @@ codeunit 50100 "TempTableMngt"
 
     begin
         TempTable.Reset();
+        
         TempTable.SetRange(Code,Rec."No.");
         if not TempTable.FindSet() then begin
             TempTable.Init();
